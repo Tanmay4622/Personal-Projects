@@ -6,29 +6,37 @@
 void initializeGrid(char grid[][10]);
 void printgrid(char grid1[][10] ,char grid2[][10]);
 void placeShip(char input[5], char grid[][10], int shipSize);
+void genCompShips(char grid[][10]);
 
 int main(){
 
     char compGrid[10][10];
     char playerGrid[10][10];
     char input[5] = "";
+    int  playerShipsHP[5];
     initializeGrid(compGrid);
     initializeGrid(playerGrid); 
     
+    srand(time(NULL));
+    genCompShips(compGrid);
     printgrid(playerGrid ,compGrid);
 
     //Pront user for ship locations
+        if(1<0){
         int i=2;
         int j=0;
-        while(i < 3){
+        int k=0;
+        while(i < 6){
             printf("Place your %d* ship: ", i);
             fgets(input, 5, stdin);
             fflush(stdin);
             placeShip(input, playerGrid, i);
-            printgrid(playerGrid ,compGrid);
+            playerShipsHP[k] = i;
+            k++;
             j += i;
             if(j == 5){continue;}
             i++;
+        }
         }
 
     return 0;
@@ -100,4 +108,8 @@ void placeShip(char input[5], char grid[][10], int shipSize){
                 grid[column + i][row] = 'S';
             }
         }
+}
+
+void genCompShips(char grid[][10]){
+    
 }
