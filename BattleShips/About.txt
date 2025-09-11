@@ -1,0 +1,3 @@
+Game of battleships inside the terminal made with C language 
+
+WIP
