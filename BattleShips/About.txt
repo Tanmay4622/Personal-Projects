@@ -1,3 +1,18 @@
 Game of battleships inside the terminal made with C language 
 
 WIP
+
+progress so far:
+ -player need to chose 2 points on the board in the format 'A1B1' where were 'A1' and 'B1' will be the starting and end points of ship.
+
+ -a unbiased random grid will be generated as opponent.
+
+ -the player and computer take turns to attack.
+
+ -first side to lose all ships loses.
+
+
+Ideas to be added:
+
+ -smart targetting for the computer's attack turn. (computer shoots randomly as of now)
+ -message display when a ship is sunk.
