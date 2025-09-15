@@ -1,6 +1,6 @@
 Game of battleships inside the terminal made with C language 
 
-WIP
+V 1.0
 
 progress so far:
  -player need to chose 2 points on the board in the format 'A1B1' where were 'A1' and 'B1' will be the starting and end points of ship.
