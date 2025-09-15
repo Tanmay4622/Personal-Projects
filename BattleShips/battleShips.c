@@ -12,22 +12,24 @@ void genCompShips(char grid[][10]);
 
 int main(){
 
-    char compGrid[10][10];
+    char compBack[10][10];
+    char compFront[10][10];
     char playerGrid[10][10];
     char input[5] = "";
     int  playerHP = 17;
     int  compHP = 17;
-    initializeGrid(compGrid);
+    initializeGrid(compBack);
+    initializeGrid(compFront);
     initializeGrid(playerGrid); 
     
     srand(time(NULL));
-    genCompShips(compGrid);
+    genCompShips(compBack);
 
         //Pront user for ship locations and place ships
         if(1){
         int i=2, j=0, checker=0;
 
-        printgrid(playerGrid, compGrid, playerHP, compHP);
+        printgrid(playerGrid, compBack, playerHP, compHP);
 
         while(i < 3){
             printf("Place your %d* ship: ", i);
@@ -44,7 +46,7 @@ int main(){
                 printf("Please Enter valid cordinates \n");
                 continue;
             }
-            printgrid(playerGrid, compGrid, playerHP, compHP);
+            printgrid(playerGrid, compFront, playerHP, compHP);
 
             // runs the loop for values 2,3,3,4,5
             j += i;
@@ -61,12 +63,12 @@ int main(){
             fflush(stdin);
             int column = (choice[0]-97);
             int row = (choice[1]-48);
-            if(compGrid[column][row] == 'S'){
+            if(compBack[column][row] == 'S'){
                 compHP--;
-                compGrid[column][row] = 'X';
+                compFront[column][row] = 'X';
             } 
             else{
-                compGrid[column][row] = 'O';
+                compFront[column][row] = 'O';
             }
         //computer attacks
             while(1){
@@ -83,7 +85,7 @@ int main(){
                     break;
                 }
             }
-        printgrid(playerGrid, compGrid, playerHP, compHP);
+        printgrid(playerGrid, compFront, playerHP, compHP);
 
         }while(playerHP != 0 && compHP != 0);
     
