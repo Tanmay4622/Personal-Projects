@@ -31,7 +31,7 @@ int main(){
 
         printgrid(playerGrid, compBack, playerHP, compHP);
 
-        while(i < 3){
+        while(i < 6){
             printf("Place your %d* ship: ", i);
             fgets(input, 5, stdin);
             fflush(stdin);
