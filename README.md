@@ -2,7 +2,7 @@
 personal passion projects
 
 
-Minesweeper in C - https://drive.google.com/file/d/1_efyrIyYcgvn_dq5AweJx-9Ltxo5hJKU/view?usp=sharing
+Minesweeper in C - [Video](https://drive.google.com/file/d/1_efyrIyYcgvn_dq5AweJx-9Ltxo5hJKU/view?usp=sharing)
 
 Battleships in C - https://drive.google.com/file/d/1iMjX8CMboblms-MLn9XNC-HR0sKSLDTE/view?usp=sharing
 
