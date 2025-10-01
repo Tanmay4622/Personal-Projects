@@ -43,13 +43,11 @@ container.addEventListener('mousemove', function(e) {
 });
 
 function followRigidChain() {
-  // First point follows cursor
   points[0].x += (lastCursorPos.x - points[0].x) * 0.08;
   points[0].y += (lastCursorPos.y - points[0].y) * 0.08;
   points[0].el.style.left = points[0].x + 'px';
   points[0].el.style.top = points[0].y + 'px';
 
-  // Each subsequent point maintains a rigid gap from the previous
   for (let i = 1; i < points.length; i++) {
     let dx = points[i].x - points[i-1].x;
     let dy = points[i].y - points[i-1].y;
@@ -66,4 +64,5 @@ function followRigidChain() {
 }
 
 followRigidChain();
+
 
