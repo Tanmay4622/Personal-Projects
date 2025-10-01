@@ -17,23 +17,7 @@ const point15 = document.getElementById('point15');
 const body = document.getElementById('body');
 
 let lastCursorPos = { x: 0, y: 0 };
-let points = [
-  { x: 0, y: 0, el: point1 },
-  { x: 0, y: 0, el: point2 },
-  { x: 0, y: 0, el: point3 },
-  { x: 0, y: 0, el: point4 },
-  { x: 0, y: 0, el: point5 },
-  { x: 0, y: 0, el: point6 },
-  { x: 0, y: 0, el: point7 },
-  { x: 0, y: 0, el: point8 },
-  { x: 0, y: 0, el: point9 },
-  { x: 0, y: 0, el: point10 },
-  { x: 0, y: 0, el: point11 },
-  { x: 0, y: 0, el: point12 },
-  { x: 0, y: 0, el: point13 },
-  { x: 0, y: 0, el: point14 },
-  { x: 0, y: 0, el: point15 }
-];
+let points = [{ x: 0, y: 0, el: point1 },{ x: 0, y: 0, el: point2 },{ x: 0, y: 0, el: point3 },{ x: 0, y: 0, el: point4 },{ x: 0, y: 0, el: point5 },{ x: 0, y: 0, el: point6 },{ x: 0, y: 0, el: point7 },{ x: 0, y: 0, el: point8 },{ x: 0, y: 0, el: point9 },{ x: 0, y: 0, el: point10 },{ x: 0, y: 0, el: point11 },{ x: 0, y: 0, el: point12 },{ x: 0, y: 0, el: point13 },{ x: 0, y: 0, el: point14 },{ x: 0, y: 0, el: point15 }];
 const chainGap = 30;
 
 container.addEventListener('mousemove', function(e) {
@@ -64,5 +48,6 @@ function followRigidChain() {
 }
 
 followRigidChain();
+
 
 
