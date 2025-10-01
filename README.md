@@ -4,6 +4,8 @@ personal passion projects
 
 PhotoShop Work - [link](https://drive.google.com/drive/folders/1tv8hiNomwvl7XQ-o0Td0E_3CtEyYDa5f?usp=sharing)
 
+Procedurally animated snake - [Source Code](https://github.com/Tanmay4622/Personal-Projects/tree/main/Procedural%20animation/snake)   [Video](https://drive.google.com/file/d/1LnqLZqKW3qah2eshxIJOaq981NVDMYuS/view?usp=sharing)
+
 Minesweeper in C - [Video](https://drive.google.com/file/d/1_efyrIyYcgvn_dq5AweJx-9Ltxo5hJKU/view?usp=sharing)
 
 Battleships in C - [Video](https://drive.google.com/file/d/1iMjX8CMboblms-MLn9XNC-HR0sKSLDTE/view?usp=sharing)
