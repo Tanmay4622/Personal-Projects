@@ -1,3 +1,4 @@
+//get ids
 const container = document.getElementById('box');
 const point1 = document.getElementById('point1');
 const point2 = document.getElementById('point2');
@@ -16,38 +17,76 @@ const point14 = document.getElementById('point14');
 const point15 = document.getElementById('point15');
 const body = document.getElementById('body');
 
+//variables
 let lastCursorPos = { x: 0, y: 0 };
-let points = [{ x: 0, y: 0, el: point1 },{ x: 0, y: 0, el: point2 },{ x: 0, y: 0, el: point3 },{ x: 0, y: 0, el: point4 },{ x: 0, y: 0, el: point5 },{ x: 0, y: 0, el: point6 },{ x: 0, y: 0, el: point7 },{ x: 0, y: 0, el: point8 },{ x: 0, y: 0, el: point9 },{ x: 0, y: 0, el: point10 },{ x: 0, y: 0, el: point11 },{ x: 0, y: 0, el: point12 },{ x: 0, y: 0, el: point13 },{ x: 0, y: 0, el: point14 },{ x: 0, y: 0, el: point15 }];
+let points = [
+  { x: 0, y: 0, el: point1 },
+  { x: 0, y: 0, el: point2 },
+  { x: 0, y: 0, el: point3 },
+  { x: 0, y: 0, el: point4 },
+  { x: 0, y: 0, el: point5 },
+  { x: 0, y: 0, el: point6 },
+  { x: 0, y: 0, el: point7 },
+  { x: 0, y: 0, el: point8 },
+  { x: 0, y: 0, el: point9 },
+  { x: 0, y: 0, el: point10 },
+  { x: 0, y: 0, el: point11 },
+  { x: 0, y: 0, el: point12 },
+  { x: 0, y: 0, el: point13 },
+  { x: 0, y: 0, el: point14 },
+  { x: 0, y: 0, el: point15 }
+];
 const chainGap = 30;
 
+//get mouse position
 container.addEventListener('mousemove', function(e) {
+
+  //gets position realtive to container
+  //offset a bit so the circle is centered on cursor
   const rect = container.getBoundingClientRect();
   lastCursorPos.x = e.clientX - rect.left - point1.offsetWidth / 2;
   lastCursorPos.y = e.clientY - rect.top - point1.offsetHeight / 2;
 });
 
+//actual animation part
 function followRigidChain() {
+
+  //for first point (follows cursor )
+  //uses interpolation to make it look smooth
   points[0].x += (lastCursorPos.x - points[0].x) * 0.08;
   points[0].y += (lastCursorPos.y - points[0].y) * 0.08;
   points[0].el.style.left = points[0].x + 'px';
   points[0].el.style.top = points[0].y + 'px';
 
+  //rest of the points (follow the point in front of them)
+  // points always stay set distance apart from each other
   for (let i = 1; i < points.length; i++) {
+
+    //calcuates distance between point and the one in fromt of it
     let dx = points[i].x - points[i-1].x;
     let dy = points[i].y - points[i-1].y;
     let dist = Math.hypot(dx, dy);
+
+    //if distance is not same more the point
     if (dist !== chainGap) {
+
+      //gets the angle of the line joining the point
       let angle = Math.atan2(dy, dx);
+
+      //moves the point so that its set diatance from last point
+      //moves along the line joining the two points
       points[i].x = points[i-1].x + Math.cos(angle) * chainGap;
       points[i].y = points[i-1].y + Math.sin(angle) * chainGap;
     }
+
+    //moves the point in CSS
     points[i].el.style.left = points[i].x + 'px';
     points[i].el.style.top = points[i].y + 'px';
   }
+
+  //makes the animation loop
   requestAnimationFrame(followRigidChain);
 }
 
 followRigidChain();
-
-
 
